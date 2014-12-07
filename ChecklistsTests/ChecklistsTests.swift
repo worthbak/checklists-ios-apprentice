@@ -2,8 +2,8 @@
 //  ChecklistsTests.swift
 //  ChecklistsTests
 //
-//  Created by Worth Baker on 12/7/14.
-//  Copyright (c) 2014 Worth Baker. All rights reserved.
+//  Created by M.I. Hollemans on 15/09/14.
+//  Copyright (c) 2014 Razeware. All rights reserved.
 //
 
 import UIKit
