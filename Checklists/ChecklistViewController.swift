@@ -17,7 +17,7 @@ class ChecklistViewController: UITableViewController {
     
     let item = ChecklistItem()
     item.text = "I am a new row."
-    item.checked = false
+    item.checked = true
     
     items.append(item)
     
@@ -66,6 +66,17 @@ class ChecklistViewController: UITableViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  // MARK: - Table View Methods
+  
+  override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    // 1
+    items.removeAtIndex(indexPath.row)
+    
+    // 2
+    let indexPaths = [indexPath]
+    tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
