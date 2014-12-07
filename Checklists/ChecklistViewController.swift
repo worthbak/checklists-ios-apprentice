@@ -9,8 +9,11 @@
 import UIKit
 
 class ChecklistViewController: UITableViewController {
-
+  
   var items: [ChecklistItem]
+
+  @IBAction func addItem(sender: AnyObject) {
+  }
 
   required init(coder aDecoder: NSCoder) {
     items = [ChecklistItem]()
