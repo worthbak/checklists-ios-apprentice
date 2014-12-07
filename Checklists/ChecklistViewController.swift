@@ -23,6 +23,20 @@ class ChecklistViewController: UITableViewController {
 
   // MARK: - Table View Methods
   
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    // Logic to turn the checkmark accessory on/off
+    if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+      if cell.accessoryType == .None {
+        cell.accessoryType = .Checkmark
+      } else {
+        cell.accessoryType = .None
+      }
+    }
+    
+    // Animate out the selection of the row
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+  }
+  
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 100
   }
