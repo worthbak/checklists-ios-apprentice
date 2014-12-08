@@ -43,5 +43,10 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     super.viewWillAppear(animated)
     textField.becomeFirstResponder()
   }
+  
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    textField.resignFirstResponder()
+  }
 
 }
