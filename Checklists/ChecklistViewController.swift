@@ -41,6 +41,9 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     items.append(row4item)
     
     super.init(coder: aDecoder)
+    
+    println("Documents folder is \(documentsDirectory())")
+    println("Data file path is \(dataFilePath())")
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -72,6 +75,26 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  // MARK: - Persistance Methods
+  
+  func documentsDirectory() -> String {
+    let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as [String]
+    
+    return paths[0]
+  }
+  
+  func dataFilePath() -> String {
+    return documentsDirectory().stringByAppendingPathComponent("Checklists.plist")
+  }
+  
+  func saveChecklistItems() {
+    let data = NSMutableData()
+    let archiver = NSKeyedArchiver(forWritingWithMutableData: data)
+    archiver.encodeObject(items, forKey: "ChecklistItems")
+    archiver.finishEncoding()
+    data.writeToFile(dataFilePath(), atomically: true)
   }
   
   // MARK: - ItemDetailViewControllerDelegate Methods
