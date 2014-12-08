@@ -26,11 +26,7 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     let oldText: NSString = textField.text
     let newText: NSString = oldText.stringByReplacingCharactersInRange(range, withString: string)
     
-    if newText.length > 0 {
-    doneBarButton.enabled = true
-    } else {
-      doneBarButton.enabled = false
-    }
+    doneBarButton.enabled = (newText.length > 0)
     
     return true
   }

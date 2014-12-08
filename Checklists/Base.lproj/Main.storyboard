@@ -87,7 +87,7 @@
                                 <action selector="cancel:" destination="NgI-xs-fxh" id="qv8-jV-73q"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="fVg-Ub-rO7">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="fVg-Ub-rO7">
                             <connections>
                                 <action selector="done:" destination="NgI-xs-fxh" id="WPW-0j-JSw"/>
                             </connections>
