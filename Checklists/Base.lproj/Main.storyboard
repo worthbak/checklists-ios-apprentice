@@ -86,7 +86,7 @@
                             </tableViewSection>
                             <tableViewSection id="epM-GN-oh8">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="0bk-Q9-w2q">
+                                    <tableViewCell hidden="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="0bk-Q9-w2q">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0bk-Q9-w2q" id="bdX-Vt-Frw">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -133,6 +133,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="doneBarButton" destination="fVg-Ub-rO7" id="4qR-Sk-wtG"/>
+                        <outlet property="rowForShowNew" destination="0bk-Q9-w2q" id="scp-d0-55l"/>
                         <outlet property="textField" destination="qCE-fY-crU" id="GKh-80-qTj"/>
                     </connections>
                 </tableViewController>

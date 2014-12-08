@@ -16,30 +16,29 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well, hello there!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6g-qf-Ym7">
-                    <rect key="frame" x="237" y="289" width="126" height="21"/>
+                    <rect key="frame" x="235" y="85" width="131" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="126" id="XU7-rX-fsk"/>
-                        <constraint firstAttribute="height" constant="21" id="k7F-6G-bct"/>
+                        <constraint firstAttribute="width" constant="131" id="F5a-gm-HEX"/>
+                        <constraint firstAttribute="height" constant="21" id="o97-1o-fH4"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tck-Cq-cWl" customClass="FLAnimatedImageView">
-                    <rect key="frame" x="135" y="95" width="331" height="186"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="331" id="5eJ-Hw-cOq"/>
-                        <constraint firstAttribute="height" constant="186" id="aNs-Ng-C8e"/>
-                    </constraints>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tck-Cq-cWl" customClass="FLAnimatedImageView">
+                    <rect key="frame" x="8" y="114" width="584" height="478"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="Tck-Cq-cWl" secondAttribute="centerX" id="AVg-PZ-9TW"/>
-                <constraint firstAttribute="centerY" secondItem="Z6g-qf-Ym7" secondAttribute="centerY" id="huJ-ge-9hc"/>
-                <constraint firstAttribute="centerX" secondItem="Z6g-qf-Ym7" secondAttribute="centerX" id="iSl-px-4cO"/>
-                <constraint firstItem="Z6g-qf-Ym7" firstAttribute="top" secondItem="Tck-Cq-cWl" secondAttribute="bottom" constant="8" id="otM-Nl-tHV"/>
+                <constraint firstAttribute="bottom" secondItem="Tck-Cq-cWl" secondAttribute="bottom" constant="8" id="31B-rO-LQc"/>
+                <constraint firstItem="Z6g-qf-Ym7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="Cpe-bV-YE2"/>
+                <constraint firstItem="Tck-Cq-cWl" firstAttribute="top" secondItem="Z6g-qf-Ym7" secondAttribute="bottom" constant="8" id="JrT-0d-n77"/>
+                <constraint firstAttribute="centerX" secondItem="Z6g-qf-Ym7" secondAttribute="centerX" id="bQg-AP-6Hu"/>
+                <constraint firstItem="Tck-Cq-cWl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="igB-R4-bwa"/>
+                <constraint firstAttribute="trailing" secondItem="Tck-Cq-cWl" secondAttribute="trailing" constant="8" id="xEk-YJ-BqP"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>
     </objects>
 </document>

@@ -20,6 +20,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
   
   @IBOutlet weak var textField: UITextField!
   @IBOutlet weak var doneBarButton: UIBarButtonItem!
+  @IBOutlet weak var rowForShowNew: UITableViewCell!
   
   weak var delegate: ItemDetailViewControllerDelegate?
 
@@ -67,6 +68,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
       title = "Edit Item"
       textField.text = item.text
       doneBarButton.enabled = true
+      rowForShowNew.hidden = false
     }
   }
   
