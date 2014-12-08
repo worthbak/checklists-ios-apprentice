@@ -111,6 +111,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
       }
     }
     dismissViewControllerAnimated(true, completion: nil)
+    saveChecklistItems()
   }
   
   func itemDetailViewController(controller: ItemDetailViewController, didFinishAddingItem item: ChecklistItem) {
@@ -123,6 +124,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     
     // Dismiss the ItemDetailViewController
     controller.dismissViewControllerAnimated(true, completion: nil)
+    saveChecklistItems()
   }
   
   // MARK: - Table View Methods
@@ -134,6 +136,8 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     // 2
     let indexPaths = [indexPath]
     tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+    
+    saveChecklistItems()
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -159,6 +163,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
       configureCheckmarkForCell(cell, withChecklistItem: item)
     }
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    saveChecklistItems()
   }
 
   func configureCheckmarkForCell(cell: UITableViewCell, withChecklistItem item: ChecklistItem) {
