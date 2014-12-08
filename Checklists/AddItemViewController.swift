@@ -8,18 +8,28 @@
 
 import UIKit
 
+protocol AddItemViewControllerDelegate: class {
+  func addItemViewControllerDidCancel(controller: AddItemViewController)
+  func addItemViewController(controller: AddItemViewController, didFinishAddingItem item: ChecklistItem)
+}
+
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
   
   @IBOutlet weak var textField: UITextField!
   @IBOutlet weak var doneBarButton: UIBarButtonItem!
+  
+  weak var delegate: AddItemViewControllerDelegate?
 
   @IBAction func done(sender: AnyObject) {
-    println("Contents of the text field are: \(textField.text)")
-    dismissViewControllerAnimated(true, completion: nil)
+    let item = ChecklistItem()
+    item.text = textField.text
+    item.checked = false
+    
+    delegate?.addItemViewController(self, didFinishAddingItem: item)
   }
   
   @IBAction func cancel(sender: AnyObject) {
-    dismissViewControllerAnimated(true, completion: nil)
+    delegate?.addItemViewControllerDidCancel(self)
   }
   
   func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
