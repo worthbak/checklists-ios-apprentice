@@ -10,6 +10,8 @@ import UIKit
 
 class MyViewController: UIViewController {
   
+  var gifURL: NSURL?
+  
   @IBOutlet weak var imageViewGIF: FLAnimatedImageView!
 
     override func viewDidLoad() {
@@ -19,7 +21,7 @@ class MyViewController: UIViewController {
       
       title = "Party Screen!"
       
-      var image = FLAnimatedImage(animatedGIFData: NSData(contentsOfURL: NSURL(string: "http://media.giphy.com/media/peAXYDqkm1TKE/giphy.gif")!))
+      var image = FLAnimatedImage(animatedGIFData: NSData(contentsOfURL: gifURL!))
       imageViewGIF.animatedImage = image
     }
 

@@ -11,7 +11,7 @@ import Foundation
 class ChecklistItem: NSObject, NSCoding {
   var text = ""
   var checked = false
-  var gifURL: NSURL = NSURL(string: "http://media.giphy.com/media/peAXYDqkm1TKE/giphy.gif")!
+  var gifURL: NSURL = NSURL(string: "http://media.giphy.com/media/tYFHR6uwfF1Ze/giphy.gif")!
 
   func toggleChecked() {
     checked = !checked

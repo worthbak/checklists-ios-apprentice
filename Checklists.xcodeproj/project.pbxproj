@@ -101,9 +101,9 @@
 		7B20F90519C6E94B0060147F /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
-				385A49181A35D6B300EF723F /* ItemDetailViewController.swift */,
 				7B20F90819C6E94C0060147F /* AppDelegate.swift */,
 				7B20F90A19C6E94C0060147F /* ChecklistViewController.swift */,
+				385A49181A35D6B300EF723F /* ItemDetailViewController.swift */,
 				38203C861A3640F500F346ED /* MyViewController.swift */,
 				38203C871A3640F500F346ED /* MyViewController.xib */,
 				7B20F90C19C6E94C0060147F /* Main.storyboard */,
