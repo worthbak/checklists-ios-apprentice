@@ -15,7 +15,9 @@ class MyViewController: UIViewController {
 
         // Do any additional setup after loading the view.
       
-      title = "Party Screen!" 
+      title = "Party Screen!"
+      
+      var 
     }
 
     override func didReceiveMemoryWarning() {
