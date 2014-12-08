@@ -8,23 +8,9 @@
 
 import UIKit
 
-class ChecklistViewController: UITableViewController {
+class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
   
   var items: [ChecklistItem]
-
-  @IBAction func addItem(sender: AnyObject) {
-    let newRowIndex = items.count
-    
-    let item = ChecklistItem()
-    item.text = "I am a new row."
-    item.checked = true
-    
-    items.append(item)
-    
-    let indexPath = NSIndexPath(forRow: newRowIndex, inSection: 0)
-    let indexPaths = [indexPath]
-    tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
-  }
 
   required init(coder aDecoder: NSCoder) {
     items = [ChecklistItem]()
@@ -56,6 +42,16 @@ class ChecklistViewController: UITableViewController {
     
     super.init(coder: aDecoder)
   }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "AddItem" {
+      let navigationController = segue.destinationViewController as UINavigationController
+      
+      let controller = navigationController.topViewController as AddItemViewController
+      
+      controller.delegate = self
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -66,6 +62,24 @@ class ChecklistViewController: UITableViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  // MARK: - AddItemViewControllerDelegate Methods
+  
+  func addItemViewControllerDidCancel(controller: AddItemViewController) {
+    controller.dismissViewControllerAnimated(true, completion: nil)
+  }
+  
+  func addItemViewController(controller: AddItemViewController, didFinishAddingItem item: ChecklistItem) {
+    // Add item to the items array
+    let newRowIndex = items.count
+    items.append(item)
+    let indexPath = NSIndexPath(forRow: newRowIndex, inSection: 0)
+    let indexPaths = [indexPath]
+    tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+    
+    // Dismiss the AddItemViewController
+    controller.dismissViewControllerAnimated(true, completion: nil)
   }
   
   // MARK: - Table View Methods
