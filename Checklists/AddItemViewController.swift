@@ -11,9 +11,12 @@ import UIKit
 protocol AddItemViewControllerDelegate: class {
   func addItemViewControllerDidCancel(controller: AddItemViewController)
   func addItemViewController(controller: AddItemViewController, didFinishAddingItem item: ChecklistItem)
+  func addItemViewController(controller: AddItemViewController, didFinishEditingItem item: ChecklistItem)
 }
 
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
+  
+  var itemToEdit: ChecklistItem?
   
   @IBOutlet weak var textField: UITextField!
   @IBOutlet weak var doneBarButton: UIBarButtonItem!
@@ -21,11 +24,15 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
   weak var delegate: AddItemViewControllerDelegate?
 
   @IBAction func done(sender: AnyObject) {
-    let item = ChecklistItem()
-    item.text = textField.text
-    item.checked = false
-    
-    delegate?.addItemViewController(self, didFinishAddingItem: item)
+    if let item = itemToEdit {
+      item.text = textField.text
+      delegate?.addItemViewController(self, didFinishEditingItem: item)
+    } else {
+      let item = ChecklistItem()
+      item.text = textField.text
+      item.checked = false
+      delegate?.addItemViewController(self, didFinishAddingItem: item)
+    }
   }
   
   @IBAction func cancel(sender: AnyObject) {
@@ -46,7 +53,15 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
   }
   
   override func viewDidLoad() {
+    super.viewDidLoad()
     tableView.rowHeight = 44
+    
+    // If the view controller is passed a ChecklistItem to edit, change the title
+    if let item = itemToEdit {
+      title = "Edit Item"
+      textField.text = item.text
+      doneBarButton.enabled = true
+    }
   }
   
   override func viewWillAppear(animated: Bool) {
