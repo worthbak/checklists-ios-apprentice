@@ -9,8 +9,11 @@
 import UIKit
 
 class AddItemViewController: UITableViewController {
+  
+  @IBOutlet weak var textField: UITextField!
 
   @IBAction func done(sender: AnyObject) {
+    println("Contents of the text field are: \(textField.text)")
     dismissViewControllerAnimated(true, completion: nil)
   }
   
@@ -20,6 +23,10 @@ class AddItemViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
     return nil
+  }
+  
+  override func viewDidLoad() {
+    tableView.rowHeight = 44
   }
 
 }
