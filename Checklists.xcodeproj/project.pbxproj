@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38203C881A3640F500F346ED /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38203C861A3640F500F346ED /* MyViewController.swift */; };
+		38203C891A3640F500F346ED /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38203C871A3640F500F346ED /* MyViewController.xib */; };
 		385A49191A35D6B300EF723F /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385A49181A35D6B300EF723F /* ItemDetailViewController.swift */; };
 		7B20F90919C6E94C0060147F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B20F90819C6E94C0060147F /* AppDelegate.swift */; };
 		7B20F90B19C6E94C0060147F /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B20F90A19C6E94C0060147F /* ChecklistViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38203C861A3640F500F346ED /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		38203C871A3640F500F346ED /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
 		385A49181A35D6B300EF723F /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ItemDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7B20F90319C6E94B0060147F /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B20F90719C6E94C0060147F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				385A49181A35D6B300EF723F /* ItemDetailViewController.swift */,
 				7B20F90819C6E94C0060147F /* AppDelegate.swift */,
 				7B20F90A19C6E94C0060147F /* ChecklistViewController.swift */,
+				38203C861A3640F500F346ED /* MyViewController.swift */,
+				38203C871A3640F500F346ED /* MyViewController.xib */,
 				7B20F90C19C6E94C0060147F /* Main.storyboard */,
 				7B20F90F19C6E94C0060147F /* Images.xcassets */,
 				7B20F91119C6E94C0060147F /* LaunchScreen.xib */,
@@ -200,6 +206,7 @@
 			files = (
 				7B20F90E19C6E94C0060147F /* Main.storyboard in Resources */,
 				7B20F91319C6E94C0060147F /* LaunchScreen.xib in Resources */,
+				38203C891A3640F500F346ED /* MyViewController.xib in Resources */,
 				7B20F91019C6E94C0060147F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +228,7 @@
 				7B20F90B19C6E94C0060147F /* ChecklistViewController.swift in Sources */,
 				385A49191A35D6B300EF723F /* ItemDetailViewController.swift in Sources */,
 				7B20F92919C82E260060147F /* ChecklistItem.swift in Sources */,
+				38203C881A3640F500F346ED /* MyViewController.swift in Sources */,
 				7B20F90919C6E94C0060147F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

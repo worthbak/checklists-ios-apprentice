@@ -23,6 +23,11 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
   
   weak var delegate: ItemDetailViewControllerDelegate?
 
+  @IBAction func showNew(sender: AnyObject) {
+    let mvc = MyViewController(nibName: "MyViewController", bundle: nil)
+    navigationController?.pushViewController(mvc, animated: true)
+  }
+  
   @IBAction func done(sender: AnyObject) {
     if let item = itemToEdit {
       item.text = textField.text
