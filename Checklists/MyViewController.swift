@@ -9,6 +9,8 @@
 import UIKit
 
 class MyViewController: UIViewController {
+  
+  @IBOutlet weak var imageViewGIF: FLAnimatedImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +19,8 @@ class MyViewController: UIViewController {
       
       title = "Party Screen!"
       
-      var 
+      var image = FLAnimatedImage(animatedGIFData: NSData(contentsOfURL: NSURL(string: "http://media.giphy.com/media/peAXYDqkm1TKE/giphy.gif")!))
+      imageViewGIF.animatedImage = image
     }
 
     override func didReceiveMemoryWarning() {

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyViewController" customModule="Checklists" customModuleProvider="target">
             <connections>
+                <outlet property="imageViewGIF" destination="Tck-Cq-cWl" id="6GR-0F-IZq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,11 +25,20 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tck-Cq-cWl" customClass="FLAnimatedImageView">
+                    <rect key="frame" x="135" y="95" width="331" height="186"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="331" id="5eJ-Hw-cOq"/>
+                        <constraint firstAttribute="height" constant="186" id="aNs-Ng-C8e"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="centerX" secondItem="Tck-Cq-cWl" secondAttribute="centerX" id="AVg-PZ-9TW"/>
                 <constraint firstAttribute="centerY" secondItem="Z6g-qf-Ym7" secondAttribute="centerY" id="huJ-ge-9hc"/>
                 <constraint firstAttribute="centerX" secondItem="Z6g-qf-Ym7" secondAttribute="centerX" id="iSl-px-4cO"/>
+                <constraint firstItem="Z6g-qf-Ym7" firstAttribute="top" secondItem="Tck-Cq-cWl" secondAttribute="bottom" constant="8" id="otM-Nl-tHV"/>
             </constraints>
         </view>
     </objects>
