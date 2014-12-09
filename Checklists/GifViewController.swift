@@ -26,6 +26,7 @@ class GifViewController: UIViewController {
     imageViewGIF.animatedImage = image
     
     activityIndicator.stopAnimating()
+    activityIndicator.hidden = true
   }
   
   override func viewWillDisappear(animated: Bool) {
