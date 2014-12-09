@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyViewController" customModule="Checklists" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="aJf-RA-eBX" id="GaE-zT-aNq"/>
                 <outlet property="imageViewGIF" destination="Tck-Cq-cWl" id="6GR-0F-IZq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,6 +26,13 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aJf-RA-eBX">
+                    <rect key="frame" x="290" y="343" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="kyS-h4-KPx"/>
+                        <constraint firstAttribute="height" constant="20" id="qUQ-78-kLS"/>
+                    </constraints>
+                </activityIndicatorView>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tck-Cq-cWl" customClass="FLAnimatedImageView">
                     <rect key="frame" x="8" y="114" width="584" height="478"/>
                 </imageView>
@@ -32,7 +40,9 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Tck-Cq-cWl" secondAttribute="bottom" constant="8" id="31B-rO-LQc"/>
+                <constraint firstItem="Tck-Cq-cWl" firstAttribute="top" secondItem="aJf-RA-eBX" secondAttribute="bottom" constant="-249" id="8Hi-yz-UhZ"/>
                 <constraint firstItem="Z6g-qf-Ym7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="Cpe-bV-YE2"/>
+                <constraint firstAttribute="centerX" secondItem="aJf-RA-eBX" secondAttribute="centerX" id="E6X-E6-83W"/>
                 <constraint firstItem="Tck-Cq-cWl" firstAttribute="top" secondItem="Z6g-qf-Ym7" secondAttribute="bottom" constant="8" id="JrT-0d-n77"/>
                 <constraint firstAttribute="centerX" secondItem="Z6g-qf-Ym7" secondAttribute="centerX" id="bQg-AP-6Hu"/>
                 <constraint firstItem="Tck-Cq-cWl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="igB-R4-bwa"/>

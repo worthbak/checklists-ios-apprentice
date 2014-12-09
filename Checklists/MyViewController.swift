@@ -13,6 +13,14 @@ class MyViewController: UIViewController {
   var gifURL: NSURL?
   
   @IBOutlet weak var imageViewGIF: FLAnimatedImageView!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  
+  override func viewDidAppear(animated: Bool) {
+    var image = FLAnimatedImage(animatedGIFData: NSData(contentsOfURL: gifURL!))
+    imageViewGIF.animatedImage = image
+    
+    activityIndicator.stopAnimating()
+  }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +28,8 @@ class MyViewController: UIViewController {
         // Do any additional setup after loading the view.
       
       title = "Party Screen!"
+      activityIndicator.startAnimating()
       
-      var image = FLAnimatedImage(animatedGIFData: NSData(contentsOfURL: gifURL!))
-      imageViewGIF.animatedImage = image
     }
 
     override func didReceiveMemoryWarning() {
