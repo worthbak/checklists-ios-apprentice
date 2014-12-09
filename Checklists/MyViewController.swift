@@ -14,6 +14,7 @@ class MyViewController: UIViewController {
   
   @IBOutlet weak var imageViewGIF: FLAnimatedImageView!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  @IBOutlet weak var textField: UITextField!
   
   override func viewDidAppear(animated: Bool) {
     var image = FLAnimatedImage(animatedGIFData: NSData(contentsOfURL: gifURL!))
@@ -28,6 +29,7 @@ class MyViewController: UIViewController {
         // Do any additional setup after loading the view.
       
       title = "Party Screen!"
+      textField.text = gifURL?.absoluteString
       activityIndicator.startAnimating()
       
     }
