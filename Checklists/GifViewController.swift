@@ -1,5 +1,5 @@
 //
-//  MyViewController.swift
+//  GifViewController.swift
 //  Checklists
 //
 //  Created by Worth Baker on 12/8/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyViewController: UIViewController {
+class GifViewController: UIViewController {
   
   var gifURL: NSURL?
   

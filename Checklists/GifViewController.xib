@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyViewController" customModule="Checklists" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GifViewController" customModule="Checklists" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="aJf-RA-eBX" id="GaE-zT-aNq"/>
                 <outlet property="imageViewGIF" destination="Tck-Cq-cWl" id="6GR-0F-IZq"/>

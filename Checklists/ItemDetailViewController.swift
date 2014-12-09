@@ -25,7 +25,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
   weak var delegate: ItemDetailViewControllerDelegate?
 
   @IBAction func showNew(sender: AnyObject) {
-    let mvc = MyViewController(nibName: "MyViewController", bundle: nil)
+    let mvc = GifViewController(nibName: "GifViewController", bundle: nil)
     mvc.gifURL = itemToEdit?.gifURL
     navigationController?.pushViewController(mvc, animated: true)
   }
