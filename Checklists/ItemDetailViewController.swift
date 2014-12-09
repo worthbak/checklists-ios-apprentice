@@ -14,7 +14,7 @@ protocol ItemDetailViewControllerDelegate: class {
   func itemDetailViewController(controller: ItemDetailViewController, didFinishEditingItem item: ChecklistItem)
 }
 
-class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
+class ItemDetailViewController: UITableViewController, UITextFieldDelegate, GifViewControllerDelegate {
   
   var itemToEdit: ChecklistItem?
   
@@ -23,10 +23,23 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
   @IBOutlet weak var rowForShowNew: UITableViewCell!
   
   weak var delegate: ItemDetailViewControllerDelegate?
+  
+  // MARK: - GifViewControllerDelegate methods
+  
+  func gifViewControllerDidReturn(controller: GifViewController, withURL url: NSURL) {
+    println("method called")
+    if let item = itemToEdit {
+      item.gifURL = url
+      println("changed item.gifURL to \(item.gifURL.absoluteString)")
+    }
+  }
+  
+  // MARK: - Other methods
 
   @IBAction func showNew(sender: AnyObject) {
     let mvc = GifViewController(nibName: "GifViewController", bundle: nil)
     mvc.gifURL = itemToEdit?.gifURL
+    mvc.delegate = self
     navigationController?.pushViewController(mvc, animated: true)
   }
   

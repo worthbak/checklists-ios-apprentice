@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol GifViewControllerDelegate: class {
+  func gifViewControllerDidReturn(controller: GifViewController, withURL url: NSURL)
+}
+
 class GifViewController: UIViewController {
   
   var gifURL: NSURL?
+  weak var delegate: GifViewControllerDelegate?
   
   @IBOutlet weak var imageViewGIF: FLAnimatedImageView!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -21,6 +26,14 @@ class GifViewController: UIViewController {
     imageViewGIF.animatedImage = image
     
     activityIndicator.stopAnimating()
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    if textField.text != gifURL?.absoluteString {
+      println("the url changed - gifVC")
+      let newGifURL = NSURL(string: textField.text)
+      delegate?.gifViewControllerDidReturn(self, withURL: newGifURL!)
+    }
   }
 
     override func viewDidLoad() {
